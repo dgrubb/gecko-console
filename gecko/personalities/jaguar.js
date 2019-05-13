@@ -1,5 +1,7 @@
 module.exports = {
     name: "Atari Jaguar",
+    backgroundCSS: "radial-gradient(circle at top left, #000000, #ff0e17)",
+    logoPath: "./assets/misc/jaguar.png"
     gameList: [
         {
             name: "Tempest 2000",
@@ -9,7 +11,7 @@ module.exports = {
                 "-g"
             ],
             romPath: "./roms/tempest",
-            boxArt: "./assets/tempest_box.png"
+            boxArt: "./assets/boxart/tempest_box.png"
         }
     ]
 };
