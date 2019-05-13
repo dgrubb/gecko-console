@@ -1,0 +1,11 @@
+Description= Gecko Web Service
+
+[Service]
+ExecStart=/usr/bin/node /opt/gecko/gecko.js
+ExecStop=/usr/bin/pkill -f gecko.js
+WorkingDirectory=/opt/gecko
+Restart=always
+
+[Install]
+WantedBy=default.target
+
