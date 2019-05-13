@@ -4,5 +4,5 @@ module.exports = {
         version: "0.0.1"
     },
     logLevel: "debug",
-    httpPort: 80
+    httpPort: 8080
 };

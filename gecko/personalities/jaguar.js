@@ -13,5 +13,9 @@ module.exports = {
             romPath: "./roms/tempest",
             boxArt: "./assets/boxart/tempest_box.png"
         }
-    ]
+    ],
+    controller: {
+        vid: 0,
+        pid: 0
+    }
 };

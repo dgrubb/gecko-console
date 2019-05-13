@@ -23,6 +23,7 @@ var _ = require("underscore");
 // Local modules
 var log = require(path.resolve(__dirname, "include", "log"));
 var config = require(path.resolve(__dirname, "include", "config"));
+var usb = require(path.resolve(__dirname, "include", "usb"));
 
 // Definitions
 var app = express();
@@ -49,7 +50,7 @@ function validateEndpoint(filename) {
  ******************************************************************************/
 
 log.level = config.logLevel;
-log.info("Initialising: " + config.appName.name + ", v" + config.appInfo.version);
+log.info("Initialising: " + config.appInfo.name + ", v" + config.appInfo.version);
 
 // Deliver the UI as a locally served HTML/JS application
 app.use(express.static(__dirname + "/static"));

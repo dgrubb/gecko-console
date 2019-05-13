@@ -9,7 +9,7 @@
 var winston = require("winston");
 var rightpad = require("right-pad");
 
-module.exports = new (winston.Logger)({
+module.exports = winston.createLogger({
     transports: [
         new (winston.transports.Console)({
             timestamp: function() {

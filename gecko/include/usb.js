@@ -7,7 +7,6 @@
 // Module includes
 var usb = require("usb");
 var path = require("path");
-var udev = require("udev");
 var _ = require("underscore");
 
 // Variables
@@ -18,19 +17,16 @@ var log = require(path.resolve(parentDir, "include", "log"));
  * Worker functions
  ******************************************************************************/
 
-/**
- * Get all devices listed by udev of a specified subsystem.
- *
- * @param {string}  subsystem   Subsystem to list (e.g., "usbhid", "tty" etc).
- * @returns {array}    List of objects describing each device in classification.
- */
-function getSubsystemListFromUDev(subsystem) {
-    var list = _.where(udev.list(), {SUBSYSTEM: subsystem});
-    if (!list) {
-        log.error("Unable to find subsystem devices from udev: " + subsystem);
-    }
-    return list;
-}
+function isDeviceConnected(vid, pid) {
+    log.verbose("USB::isDeviceConnected");
+    var retVal = false;
+    _.each(usb.getDeviceList(), function(device) {
+        if (device.deviceDescriptor.idVendor == vid && device.deviceDescriptor.idProduct == pid) {
+            retVal = true;
+        }
+    });
+    return retVal;
+};
 
 /*******************************************************************************
  * Event callbacks
@@ -51,7 +47,7 @@ module.exports.getDeviceList = function() {
     return usb.getDeviceList();
 };
 
-module.exports.getDeviceListBySubsystem = function(subsystem) {
-    log.verbose("USB::getDeviceListBySubsystem");
-    return getSubsystemListFromUDev(subsystem);
+module.exports.getIsControllerConnected = function(controller) {
+    log.verbose("USB::getController");
+    return isDeviceConnected(controller.vid, controller.pid);
 };

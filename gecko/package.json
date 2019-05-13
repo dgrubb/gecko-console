@@ -4,14 +4,15 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "body-parser": "1.17.x",
-    "express": "4.15.x",
-    "formidable": "1.1.x",
+    "body-parser": "1.19.x",
+    "express": "4.16.x",
+    "formidable": "1.2.x",
     "http-codes": "1.0.x",
-    "moment": "2.19.x",
+    "moment": "2.24.x",
     "right-pad": "1.0.x",
-    "serve-static": "1.12.x",
-    "underscore": "1.8.x",
-    "winston": "2.3.x"
+    "serve-static": "1.14.x",
+    "underscore": "1.9.x",
+    "usb": "1.5.x",
+    "winston": "3.2.x"
   }
 }
