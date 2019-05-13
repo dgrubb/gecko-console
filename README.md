@@ -39,3 +39,9 @@ browser instance in kiosk mode](https://github.com/dgrubb/Ubuntu-Kiosk) which wi
 request a HTML/JS UI from the Gecko service. Gecko will provide API calls for 
 providing information about current personality and libraries as well as calls to launch 
 specific emulators.
+
+## Gecko?
+
+Because of the way the UI will take on different personalities I originally intended 
+to call it Chameleon, but that name has [some very negative connotations](https://en.wikipedia.org/wiki/Chameleon_(video_game_console)) in the retro 
+gaming community ... 
