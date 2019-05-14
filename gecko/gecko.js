@@ -11,6 +11,7 @@
  */
 
 // NPM dependencies
+var async = require("async");
 var fs = require("fs");
 var http = require("http");
 var child_process = require("child_process");
@@ -24,6 +25,7 @@ var _ = require("underscore");
 var log = require(path.resolve(__dirname, "include", "log"));
 var config = require(path.resolve(__dirname, "include", "config"));
 var usb = require(path.resolve(__dirname, "include", "usb"));
+var personality = require(path.resolve(__dirname, "include", "personality"));
 
 // Definitions
 var app = express();
@@ -45,6 +47,35 @@ function validateEndpoint(filename) {
     return null;
 }
 
+function initInterface(callback) {
+    // Each top-level endpoint shall be represented by a .js file under api, e.g.,:
+    //
+    // http://localhost/api/usb - ./api/usb.js
+    // http://localhost/api/foo - ./api/foo.js
+    // etc
+    //
+    // We shall dynamically populate our api calls by scanning the api directory
+    // for .js files, require() them to retrieve their module contents and attach
+    // each one in turn as a user-callable endpoint. In this way we can avoid
+    // having to manually track each new addition and can extend our api calls by
+    // simply adding a new module in the correct place.
+    fs.readdir(__dirname + "/api", function(err, files) {
+        files.forEach(function(file) {
+            // Ensure each item is a valid .js file. We wish to avoid including .swp
+            // files, for instance.
+            endpoint = validateEndpoint(file);
+            if (endpoint) {
+                log.debug("Adding API endpoint: " + endpoint);
+                app.use(
+                    "/api/" + endpoint,
+                    require(path.resolve(__dirname, "api", endpoint))
+                );
+            }
+        });
+        callback(null);
+    });
+}
+
 /*******************************************************************************
  * Start script execution
  ******************************************************************************/
@@ -55,33 +86,17 @@ log.info("Initialising: " + config.appInfo.name + ", v" + config.appInfo.version
 // Deliver the UI as a locally served HTML/JS application
 app.use(express.static(__dirname + "/static"));
 
-// Each top-level endpoint shall be represented by a .js file under api, e.g.,:
-//
-// http://localhost/api/usb - ./api/usb.js
-// http://localhost/api/foo - ./api/foo.js
-// etc
-//
-// We shall dynamically populate our api calls by scanning the api directory
-// for .js files, require() them to retrieve their module contents and attach
-// each one in turn as a user-callable endpoint. In this way we can avoid
-// having to manually track each new addition and can extend our api calls by
-// simply adding a new module in the correct place.
-fs.readdir(__dirname + "/api", function(err, files) {
-    files.forEach(function(file) {
-        // Ensure each item is a valid .js file. We wish to avoid including .swp
-        // files, for instance.
-        endpoint = validateEndpoint(file);
-        if (endpoint) {
-            log.debug("Adding API endpoint: " + endpoint);
-            app.use(
-                "/api/" + endpoint,
-                require(path.resolve(__dirname, "api", endpoint))
-            );
-        }
-    });
+async.series([
+    personality.loadPersonalityList,
+    personality.derivePersonality,
+    initInterface
+], function(err, result) {
+    if (err) {
+        log.error("Failed to initialise Gecko");
+        process.exit(-1);
+    }
     app.listen(config.httpPort, function() {
         log.info("HTTP interface initialised");
     });
 });
-
 

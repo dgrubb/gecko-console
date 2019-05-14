@@ -1,7 +1,7 @@
 module.exports = {
     name: "Atari Jaguar",
     backgroundCSS: "radial-gradient(circle at top left, #000000, #ff0e17)",
-    logoPath: "./assets/misc/jaguar.png"
+    logoPath: "./assets/misc/jaguar.png",
     gameList: [
         {
             name: "Tempest 2000",
@@ -15,8 +15,8 @@ module.exports = {
         }
     ],
     controller: {
-        vid: 0,
-        pid: 0
+        vid: 3315,
+        pid: 58113
     },
     keyInputs: {
         left: 0,

@@ -18,7 +18,11 @@ var log = require(path.resolve(parentDir, "include", "log"));
  ******************************************************************************/
 
 function isDeviceConnected(vid, pid) {
-    log.verbose("USB::isDeviceConnected");
+    log.info("Checking for USB device [ vid: 0x" +
+                vid.toString(16) +
+                ", pid: 0x" +
+                pid.toString(16) +
+                " ]");
     var retVal = false;
     _.each(usb.getDeviceList(), function(device) {
         if (device.deviceDescriptor.idVendor == vid && device.deviceDescriptor.idProduct == pid) {
@@ -47,7 +51,7 @@ module.exports.getDeviceList = function() {
     return usb.getDeviceList();
 };
 
-module.exports.getIsControllerConnected = function(controller) {
-    log.verbose("USB::getController");
-    return isDeviceConnected(controller.vid, controller.pid);
+module.exports.isDeviceConnected = function(vid, pid) {
+    log.verbose("USB::isDeviceConnected");
+    return isDeviceConnected(vid, pid);
 };
