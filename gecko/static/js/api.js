@@ -25,6 +25,14 @@ var API = (function() {
         );
     }
 
+    function getCurrentPersonality(callback) {
+        Network.get(
+            "/api/personality/personality",
+            {},
+            callback
+        );
+    }
+
     function validateResponse(resp, status) {
         if ("success" != status) {
             console.error(
@@ -41,6 +49,7 @@ var API = (function() {
     }
 
     var api = {
+        getCurrentPersonality: getCurrentPersonality,
         rebootSystem: rebootSystem,
         restartService: restartService,
         validateResponse: validateResponse

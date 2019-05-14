@@ -8,5 +8,8 @@
  */
 
 $(document).ready(function() {
+    API.getCurrentPersonality(function(resp) {
+        console.log(resp);
+    });
 });
 

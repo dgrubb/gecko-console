@@ -40,7 +40,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
  * @returns {string} Name of endpoint, null on failure
  */
 function validateEndpoint(filename) {
-    var fileMatch = new RegExp(/^w+\.js/g);
+    var fileMatch = new RegExp(/^\w+\.js/g);
     if (fileMatch.test(filename)) {
         return filename.substr(0, filename.lastIndexOf("."));
     }

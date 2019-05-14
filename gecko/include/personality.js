@@ -16,7 +16,7 @@ var config = require(path.resolve(parentDir, "include", "config"));
 var usb = require(path.resolve(parentDir, "include", "usb"));
 
 var personalities = [];
-var curentPersonality;
+var currentPersonality;
 
 /*******************************************************************************
  * Worker functions

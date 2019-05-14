@@ -35,32 +35,8 @@ router.use(function(req, res, next) {
  * /api/personality/personality
  */
 router.get("/personality", function(req, res, next) {
-    log.debug("GET /api/system/personality");
-    personality.getPersonality
-
-    exec("shutdown -r now", function(err, stdout, stderr) {
-        if (err) {
-            return res.status(httpCodes.INTERNAL_SERVER_ERROR).send();
-        }
-        return res.status(httpCodes.OK).send();
-    });
-});
-
-/**
- * Restarts the background hardware worker service.
- *
- * GET
- *
- * /api/system/restart_service
- */
-router.get("/restart_service", function(req, res, next) {
-    log.debug("GET /api/system/restart_service");
-    exec("systemctl restart gecko", function(err, stdout, stderr) {
-        if (err) {
-            return res.status(httpCodes.INTERNAL_SERVER_ERROR).send();
-        }
-        return res.status(httpCodes.OK).send();
-    });
+    log.debug("GET /api/personality/personality");
+    return res.status(httpCodes.OK).send(personality.getPersonality());
 });
 
 module.exports = router;
