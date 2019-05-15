@@ -6,3 +6,35 @@ body {
     font-family: "Helvetica", arial, sans-serif;
     padding: 1em;
 }
+
+.top-logo {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 400px;
+    height: 150px;
+}
+
+.carousel-container {
+    position: absolute;
+    top: 300px;
+    left: 100px;
+    width: 1655px;
+    height: 530px;
+}
+
+.footer-menu {
+    border: solid 2px black;
+    position: absolute;
+    top: 880px;
+    left: 100px;
+    width: 1720px;
+    height: 150px;
+    background-color: #FE9600;
+}
+
+.test-box {
+    border: solid 2px black;
+    background-color: #FE9600;
+    background-image: url("./images/jaguar_boxart/tempest-2000.png");
+}

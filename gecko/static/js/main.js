@@ -8,8 +8,15 @@
  */
 
 $(document).ready(function() {
-    API.getCurrentPersonality(function(resp) {
-        console.log(resp);
+
+    $("#carousel_container").slick({
+        centerMode: true,
+        centerPadding: "50px",
+        slidesToShow: 3,
+        arrows: true,
+        dots: true
     });
+
+    Personality.loadCurrentPersonality();
 });
 

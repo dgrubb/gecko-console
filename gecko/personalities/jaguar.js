@@ -1,7 +1,7 @@
 module.exports = {
     name: "Atari Jaguar",
     backgroundCSS: "radial-gradient(circle at top left, #000000, #ff0e17)",
-    logoPath: "./assets/misc/jaguar.png",
+    logoPath: "./images/jaguar.png",
     gameList: [
         {
             name: "Tempest 2000",
