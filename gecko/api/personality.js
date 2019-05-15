@@ -39,4 +39,14 @@ router.get("/personality", function(req, res, next) {
     return res.status(httpCodes.OK).send(personality.getPersonality());
 });
 
+router.post("/launch", function(req, res, next) {
+    log.debug("POST /api/personality/launch");
+    if (!req.body || !req.body.game) {
+        log.error("Game launch requested without name");
+        return res.status(httpCodes.BAD_REQUEST).send("No game specified");
+    }
+    log.info("Requesting to launch game: " + req.body.game);
+    return res.status(httpCodes.OK).send("Success");
+});
+
 module.exports = router;

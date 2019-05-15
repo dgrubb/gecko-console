@@ -33,6 +33,14 @@ var API = (function() {
         );
     }
 
+    function launchGame(game, callback) {
+        Network.post(
+            "/api/personality/launch",
+            { game: game },
+            callback
+        )
+    }
+
     function validateResponse(resp, status) {
         if ("success" != status) {
             console.error(
@@ -50,6 +58,7 @@ var API = (function() {
 
     var api = {
         getCurrentPersonality: getCurrentPersonality,
+        launchGame: launchGame,
         rebootSystem: rebootSystem,
         restartService: restartService,
         validateResponse: validateResponse
