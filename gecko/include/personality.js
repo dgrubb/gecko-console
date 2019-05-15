@@ -53,6 +53,10 @@ function loadPersonalityList(callback) {
     });
 }
 
+function getGameDescription(game) {
+    return _.findWhere(currentPersonality.gameList, { name: game });
+}
+
 /*******************************************************************************
  * Public API
  ******************************************************************************/
@@ -60,6 +64,11 @@ function loadPersonalityList(callback) {
 module.exports.getPersonality = function() {
     log.verbose("Personality::getPersonality");
     return currentPersonality;
+};
+
+module.exports.getGameDescription = function(game) {
+    log.verbose("Personality::getGameDecription");
+    return getGameDescription(game);
 };
 
 module.exports.loadPersonalityList = function(callback) {

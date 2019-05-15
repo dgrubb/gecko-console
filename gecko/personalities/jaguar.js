@@ -54,13 +54,6 @@ module.exports = {
         pid: 58113,
         id: "dgrubb"
     },
-    keyInputs: {
-        left: 0,
-        right: 0,
-        up: 0,
-        down: 0,
-        select: 0
-    },
     menuCombo: [
         0,
         0

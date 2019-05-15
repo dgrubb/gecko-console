@@ -15,6 +15,14 @@ body {
     height: 150px;
 }
 
+.emblem-logo {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    width: 150px;
+    height: 150px;
+}
+
 .carousel-container {
     position: absolute;
     top: 300px;
@@ -24,13 +32,21 @@ body {
 }
 
 .footer-menu {
-    border: solid 2px black;
     position: absolute;
     top: 880px;
     left: 100px;
     width: 1720px;
     height: 150px;
+    /*
+    border: solid 2px black;
     background-color: #FE9600;
+    */
+    -webkit-text-stroke: 1px black;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFFFFF;
+    white-space: pre-line;
 }
 
 .test-box {
@@ -38,3 +54,4 @@ body {
     background-color: #FE9600;
     background-image: url("./images/jaguar_boxart/tempest-2000.png");
 }
+
