@@ -50,8 +50,8 @@ module.exports = {
         },
     ],
     controller: {
-        vid: 331500,
-        pid: 5811300,
+        vid: 3315,
+        pid: 58113,
         id: "dgrubb"
     },
     menuCombo: [
