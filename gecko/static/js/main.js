@@ -14,7 +14,8 @@ $(document).ready(function() {
         centerPadding: "50px",
         slidesToShow: 3,
         arrows: true,
-        dots: true
+        dots: true,
+        focusOnSelect: true
     });
 
     Personality.loadCurrentPersonality();

@@ -1,7 +1,7 @@
 module.exports = {
     name: "Atari Jaguar",
     backgroundCSS: "radial-gradient(circle at top left, #000000, #ff0e17)",
-    logoPath: "./images/jaguar.png",
+    logoPath: "./images/logos/jaguar.png",
     gameList: [
         {
             name: "Tempest 2000",
@@ -11,12 +11,13 @@ module.exports = {
                 "-g"
             ],
             romPath: "./roms/tempest",
-            boxArt: "./assets/boxart/tempest_box.png"
+            boxArt: "./images/jaguar_boxart/tempest-2000.png"
         }
     ],
     controller: {
         vid: 3315,
-        pid: 58113
+        pid: 58113,
+        id: "dgrubb"
     },
     keyInputs: {
         left: 0,
