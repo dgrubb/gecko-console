@@ -1,8 +1,8 @@
 module.exports = {
     name: "Atari Jaguar",
-    backgroundCSS: "radial-gradient(circle at top left, #000000, #ff0e17)",
-    logoPath: "./images/logos/jaguar.png",
-    emblemPath: "./images/logos/atari.png",
+    backgroundCSS: "radial-gradient(circle at top left, #000000, #003883)",
+    logoPath: "./images/logos/sega.png",
+    emblemPath: "",
     gameList: [
         {
             name: "Tempest 2000",
@@ -50,8 +50,8 @@ module.exports = {
         },
     ],
     controller: {
-        vid: 331500,
-        pid: 5811300,
+        vid: 3315,
+        pid: 58113,
         id: "dgrubb"
     },
     menuCombo: [
