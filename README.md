@@ -3,7 +3,7 @@
 This is a browser-based emulator front-end which adapts to the controllers attached 
 to the system.
 
-![Gecko with Jaguar personality](./preview/gecko-jag-screen-sm.png)
+![Gecko with Jaguar personality](./preview/gecko-jag-screen-sm.png) ![Gecko with Sega personality](./preview/gecko-sega-screen-sm.png)
 
 ## Rationale
 

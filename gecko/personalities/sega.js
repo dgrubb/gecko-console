@@ -5,48 +5,70 @@ module.exports = {
     emblemPath: "./images/logos/sonic_emblem.png",
     gameList: [
         {
-            name: "Tempest 2000",
-            releaseDate: "1994",
-            developer: "Llamasoft",
+            name: "Sonic the Hedgehog",
+            releaseDate: "1991",
+            developer: "Sega",
             launchCommand: "virtualjaguar",
             launchArguments: [
                 "-g"
             ],
             romPath: "./roms/tempest",
-            boxArt: "./images/jaguar_boxart/tempest-2000.png"
+            boxArt: "./images/sega_boxart/sonic-1.png"
         },
         {
-            name: "Alien Vs. Predator",
-            releaseDate: "1994",
-            developer: "Rebellion Developments",
+            name: "Sonic the Hedgehog 2",
+            releaseDate: "1992",
+            developer: "Sega Technical Institute",
             launchCommand: "virtualjaguar",
             launchArguments: [
                 "-g"
             ],
             romPath: "./roms/avp",
-            boxArt: "./images/jaguar_boxart/alien-vs-predator.png"
+            boxArt: "./images/sega_boxart/sonic-2.png"
         },
         {
-            name: "Rayman",
-            releaseDate: "1995",
-            developer: "UbiSoft",
+            name: "Sonic the Hedgehog 3",
+            releaseDate: "1994",
+            developer: "Sega",
             launchCommand: "virtualjaguar",
             launchArguments: [
                 "-g"
             ],
             romPath: "./roms/rayman",
-            boxArt: "./images/jaguar_boxart/rayman.png"
+            boxArt: "./images/sega_boxart/sonic-3.png"
         },
         {
-            name: "Zool 2",
-            releaseDate: "1993",
-            developer: "Imagitec Design",
+            name: "Sonic and Knuckles",
+            releaseDate: "1994",
+            developer: "Sega",
             launchCommand: "virtualjaguar",
             launchArguments: [
                 "-g"
             ],
             romPath: "./roms/zool_2",
-            boxArt: "./images/jaguar_boxart/zool-2.png"
+            boxArt: "./images/sega_boxart/sonic-and-knuckles.png"
+        },
+        {
+            name: "Vectorman",
+            releaseDate: "1995",
+            developer: "BlueSky Software",
+            launchCommand: "virtualjaguar",
+            launchArguments: [
+                "-g"
+            ],
+            romPath: "./roms/zool_2",
+            boxArt: "./images/sega_boxart/vectorman.png"
+        },
+        {
+            name: "Vectorman 2",
+            releaseDate: "1996",
+            developer: "BlueSky Software",
+            launchCommand: "virtualjaguar",
+            launchArguments: [
+                "-g"
+            ],
+            romPath: "./roms/zool_2",
+            boxArt: "./images/sega_boxart/vectorman-2.png"
         },
     ],
     controller: {
