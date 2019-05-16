@@ -3,14 +3,15 @@
 This is a browser-based emulator front-end which adapts to the controllers attached 
 to the system.
 
-![Gecko with Jaguar personality](./preview/gecko-jag-screen-sm.png) ![Gecko with Sega personality](./preview/gecko-sega-screen-sm.png)
+![Gecko with Jaguar personality](./preview/gecko-jag-screen-sm.png)
+![Gecko with Sega personality](./preview/gecko-sega-screen-sm.png)
 
 ## Rationale
 
 For the vast majority of retro gaming a Pi with RetroArch is more 
 than sufficient. However, there are a few corner cases it doesn't handle well:
 
-* RetroArch officially supports, quite sensibly, a small assortment of controllers 
+* RetroArch officially supports a small assortment of controllers 
 and using more niche layouts can be awkward to map.
 * RetroArch has poor support for some of the more eclectic consoles (e.g., Atari 
 Jaguar).
@@ -29,7 +30,7 @@ controllers is connected and a different skin and library when his controller is
 Initially, Gecko will support the following three personalities:
 
 1) Atari Jaguar: when a Jaguar controller is connected it will show only Jaguar titles.
-2) Sega: when my clone Saturn controller is connected it will display a Sega-style theme 
+2) Sega: when a clone Saturn controller is connected it will display a Sega-style theme 
 and library.
 3) Boy: when my son's mini XBox style controller is connected it will display his favourite games.
 
