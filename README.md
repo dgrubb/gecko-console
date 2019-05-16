@@ -11,14 +11,14 @@ to the system.
 For the vast majority of retro gaming a Pi with RetroArch is more 
 than sufficient. However, there are a few corner cases it doesn't handle well:
 
-* RetroArch officially supports a small assortment of controllers 
+* RetroPie officially supports a small assortment of controllers 
 and using more niche layouts can be awkward to map.
-* RetroArch has poor support for some of the more eclectic consoles (e.g., Atari 
+* RetroPie has poor support for some of the more eclectic consoles (e.g., Atari 
 Jaguar).
-* It's a little awkward getting RetroArch smoothly set up on devices other than 
+* It's a little awkward getting RetroPie smoothly set up on devices other than 
 the wonderful Raspbery Pi (disclaimer: IMHO).
 
-These are all quite sensible design choices for the cases RetroArch fits in. I want 
+These are all quite sensible design choices for the cases RetroPie fits in. I want 
 a system which can handle the Atari Jaguar and its odd controller. I also want a 
 system my very young son can play with who enjoys a different game library than I do, 
 so I don't want him to have to deal with navigating around my library. To solve 
