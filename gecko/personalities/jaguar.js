@@ -10,7 +10,9 @@ module.exports = {
             developer: "Llamasoft",
             launchCommand: "virtualjaguar",
             launchArguments: [
+                "-b",
                 "-g",
+                "-f",
                 "./roms/jaguar/tempest-2000.jag"
             ],
             boxArt: "./images/jaguar_boxart/tempest-2000.png"
@@ -21,9 +23,11 @@ module.exports = {
             developer: "Rebellion Developments",
             launchCommand: "virtualjaguar",
             launchArguments: [
-                "-g"
+                "-b",
+                "-g",
+                "-f",
+                "./roms/jaguar/avp.jag"
             ],
-            romPath: "./roms/avp",
             boxArt: "./images/jaguar_boxart/alien-vs-predator.png"
         },
         {
@@ -32,9 +36,11 @@ module.exports = {
             developer: "UbiSoft",
             launchCommand: "virtualjaguar",
             launchArguments: [
-                "-g"
+                "-b",
+                "-g",
+                "-f",
+                "./roms/jaguar/rayman.jag"
             ],
-            romPath: "./roms/rayman",
             boxArt: "./images/jaguar_boxart/rayman.png"
         },
         {
@@ -43,16 +49,17 @@ module.exports = {
             developer: "Imagitec Design",
             launchCommand: "virtualjaguar",
             launchArguments: [
-                "-g"
+                "-b",
+                "-g",
+                "-f",
+                "./roms/jaguar/zool-2.jag"
             ],
-            romPath: "./roms/zool_2",
             boxArt: "./images/jaguar_boxart/zool-2.png"
         },
     ],
     controller: {
         vid: 4617,
         pid: 6534,
-        id: "dgrubb"
     },
     menuCombo: [
         3,

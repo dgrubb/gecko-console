@@ -74,7 +74,6 @@ module.exports = {
     controller: {
         vid: 2064,
         pid: 58625,
-        id: "dgrubb"
     },
     menuCombo: [
         9,
