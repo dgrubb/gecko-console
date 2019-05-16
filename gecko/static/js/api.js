@@ -38,7 +38,15 @@ var API = (function() {
             "/api/personality/launch",
             { game: game },
             callback
-        )
+        );
+    }
+
+    function getEmulationState(callback) {
+        Network.get(
+            "/api/personality/running",
+            {},
+            callback
+        );
     }
 
     function validateResponse(resp, status) {
@@ -58,6 +66,7 @@ var API = (function() {
 
     var api = {
         getCurrentPersonality: getCurrentPersonality,
+        getEmulationState: getEmulationState,
         launchGame: launchGame,
         rebootSystem: rebootSystem,
         restartService: restartService,

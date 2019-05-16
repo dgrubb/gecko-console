@@ -10,9 +10,9 @@ module.exports = {
             developer: "Llamasoft",
             launchCommand: "virtualjaguar",
             launchArguments: [
-                "-g"
+                "-g",
+                "./roms/jaguar/tempest-2000.jag"
             ],
-            romPath: "./roms/tempest",
             boxArt: "./images/jaguar_boxart/tempest-2000.png"
         },
         {
@@ -50,12 +50,29 @@ module.exports = {
         },
     ],
     controller: {
-        vid: 33150,
-        pid: 581130,
+        vid: 4617,
+        pid: 6534,
         id: "dgrubb"
     },
     menuCombo: [
-        0,
-        0
-    ]
+        3,
+        13
+    ],
+    menuControls: {
+        left: {
+            axis: true,
+            id: 0,
+            val: -1
+        },
+        right: {
+            axis: true,
+            id: 0,
+            val: 1
+        },
+        select: {
+            axis: false,
+            id: 10,
+            val: 1
+        }
+    }
 };

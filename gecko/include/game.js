@@ -19,6 +19,7 @@ var personality = require(path.resolve(parentDir, "include", "personality"));
 
 var emulatorProcess = null;
 var exitSequence = [];
+var running = false;
 
 /*******************************************************************************
  * Worker functions
@@ -31,6 +32,9 @@ function launchGame(game) {
         return false;
     }
     gamepad.init();
+    for (var a=0, b = gamepad.numDevices(); a < b; a++) {
+        log.info(JSON.stringify(gamepad.deviceAtIndex()));
+    }
     exitSequence = personality.getPersonality().menuCombo;
     gamepad.on("down", function(id, num) {
         log.debug("Gamepad key down [ " + id + ": " + num + " ]");
@@ -40,11 +44,15 @@ function launchGame(game) {
     emulatorProcess = spawn(gameDesc.launchCommand, gameDesc.launchArguments);
     emulatorProcess.on("exit", code => {
         log.info("Emulator process exited");
+        stopGame();
     });
 
     emulatorProcess.on("close", code => {
         log.info("Emulator process closed");
+        stopGame();
     });
+    running = true;
+    return true;
 }
 
 function stopGame() {
@@ -53,6 +61,7 @@ function stopGame() {
         emulatorProcess.stdin.pause();
         emulatorProcess.kill();
     }
+    running = false;
     return true;
 }
 
@@ -60,7 +69,7 @@ function checkForExitSequence() {
     var sequence = true;
     for (var j=0, l=gamepad.numDevices(); j<l; j++) {
         for (var i=0; i<exitSequence.length; i++) {
-            if (!gamepad.deviceAtIndex[j].buttons[exitSequence[i]]) {
+            if (!gamepad.deviceAtIndex(j).buttonStates[exitSequence[i]]) {
                 sequence = false;
             }
         }
@@ -79,5 +88,12 @@ module.exports.stopGame = function() {
 };
 
 module.exports.launchGame = function(game) {
+    if (running) {
+        stopGame();
+    }
     return launchGame(game);
+};
+
+module.exports.isRunning = function() {
+    return running;
 };

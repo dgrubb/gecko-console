@@ -11,6 +11,8 @@ var Personality = (function() {
 
     var personality = null;
     var gameIdx = 0;
+    var controls = null;
+    var set = false;
 
     function loadCurrentPersonality() {
         API.getCurrentPersonality(function(resp, status) {
@@ -31,6 +33,10 @@ var Personality = (function() {
             if (personality.gameList && personality.gameList.length) {
                 setGameLibrary(personality.gameList);
             }
+            if (personality.menuControls) {
+                controls = personality.menuControls;
+            }
+            set = true;
         });
     }
 
@@ -121,14 +127,28 @@ var Personality = (function() {
             return;
         }
         API.launchGame(personality.gameList[gameIdx].name, function(resp, status) {
+            if (!API.validateResponse(resp, status)) {
+                console.error("Failed to launch game");
+                return false;
+            }
         });
+    }
+
+    function getControls() {
+        return controls;
+    }
+
+    function getSet() {
+        return set;
     }
 
     var api = {
         decrementGameSelection: decrementGameSelection,
         incrementGameSelection: incrementGameSelection,
         launchGame: launchGame,
-        loadCurrentPersonality: loadCurrentPersonality
+        loadCurrentPersonality: loadCurrentPersonality,
+        getControls: getControls,
+        getSet: getSet
     };
 
     return api;

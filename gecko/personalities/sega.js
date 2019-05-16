@@ -72,12 +72,29 @@ module.exports = {
         },
     ],
     controller: {
-        vid: 3315,
-        pid: 58113,
+        vid: 2064,
+        pid: 58625,
         id: "dgrubb"
     },
     menuCombo: [
-        0,
+        9,
         0
-    ]
+    ],
+    menuControls: {
+        left: {
+            axis: true,
+            id: 0,
+            val: -1
+        },
+        right: {
+            axis: true,
+            id: 0,
+            val: 1
+        },
+        select: {
+            axis: false,
+            id: 9,
+            val: 1
+        }
+    }
 };

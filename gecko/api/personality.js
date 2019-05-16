@@ -40,6 +40,11 @@ router.get("/personality", function(req, res, next) {
     return res.status(httpCodes.OK).send(personality.getPersonality());
 });
 
+router.get("/running", function(req, res, next) {
+    log.debug("GET /api/personality/running");
+    return res.status(httpCodes.OK).send(game.isRunning());
+});
+
 router.post("/launch", function(req, res, next) {
     log.debug("POST /api/personality/launch");
     if (!req.body || !req.body.game) {
